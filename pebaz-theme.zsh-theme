@@ -11,14 +11,5 @@ ZSH_THEME_HG_PROMPT_SUFFIX=$ZSH_THEME_GIT_PROMPT_SUFFIX
 ZSH_THEME_HG_PROMPT_DIRTY=$ZSH_THEME_GIT_PROMPT_DIRTY
 ZSH_THEME_HG_PROMPT_CLEAN=$ZSH_THEME_GIT_PROMPT_CLEAN
 
-vcs_status() {
-    if [[ $(whence in_svn) != "" ]] && in_svn; then
-        svn_prompt_info
-    elif [[ $(whence in_hg) != "" ]] && in_hg; then
-        hg_prompt_info
-    else
-        git_prompt_info
-    fi
-}
 
-PROMPT='%2~ $(vcs_status)»%b '
+PROMPT='( %2~ >'
